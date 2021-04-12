@@ -1,0 +1,6 @@
+(define (pascals-triangle depth n)
+  (cond ((or (> n depth) (< n 0)) 0)
+        ((= n 1) 1)
+        ((> n (+ (- depth n) 1)) (pascals-triangle depth (+ (- depth n) 1)))
+        (else (+ (pascals-triangle (- depth 1) (- n 1))
+                 (pascals-triangle (- depth 1) n)))))
